@@ -1,4 +1,3 @@
-import { isErrored } from "stream"
 import { ERROR, GOTALLPRODUCT, LOADING } from "../actions/types"
 
 const productInit = {
@@ -8,7 +7,6 @@ const productInit = {
     filteredProduct: []
 }
 export const ProductReducer = (state=productInit, {type, payload})=>{
-
     switch(type){
         case LOADING:
             return{
@@ -28,6 +26,8 @@ export const ProductReducer = (state=productInit, {type, payload})=>{
                 isError: "",
                 products: payload
             }
+        default:
+            return state;
     }
 
 }
